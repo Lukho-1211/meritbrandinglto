@@ -92,7 +92,7 @@ export function ContactForm({ preselected }: ContactFormProps) {
     } catch {
       setStatus("error");
       setErrorMessage(
-        "We could not reach the server. WhatsApp +27 721 172 942 or email meritbrandinglto@gmail.com.",
+        "We could not reach the server. WhatsApp +27 721 172 942 or email lukho@meritbranding.com.",
       );
     }
   }

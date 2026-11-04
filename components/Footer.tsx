@@ -20,10 +20,10 @@ export function Footer() {
             +27 721 172 942
           </a>
           <a
-            href="mailto:meritbrandinglto@gmail.com"
+            href="mailto:lukho@meritbranding.com"
             className="hover:text-ink transition-colors"
           >
-            meritbrandinglto@gmail.com
+            lukho@meritbranding.com
           </a>
           <a
             href="https://wa.me/27721172942"

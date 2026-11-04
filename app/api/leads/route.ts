@@ -77,7 +77,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "We could not save your enquiry. WhatsApp +27 721 172 942 or email meritbrandinglto@gmail.com.",
+            "We could not save your enquiry. WhatsApp +27 721 172 942 or email lukho@meritbranding.com.",
         },
         { status: 500 },
       );
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "We could not save your enquiry. WhatsApp +27 721 172 942 or email meritbrandinglto@gmail.com.",
+          "We could not save your enquiry. WhatsApp +27 721 172 942 or email lukho@meritbranding.com.",
       },
       { status: 500 },
     );
@@ -95,7 +95,7 @@ export async function POST(request: Request) {
 
   // Email is best-effort after the row is saved.
   const resendKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.LEAD_TO_EMAIL || "meritbrandinglto@gmail.com";
+  const toEmail = process.env.LEAD_TO_EMAIL || "lukho@meritbranding.com";
   const fromEmail =
     process.env.LEAD_FROM_EMAIL || "Merit Branding <onboarding@resend.dev>";
 

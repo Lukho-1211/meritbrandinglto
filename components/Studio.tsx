@@ -15,10 +15,10 @@ export function Studio() {
             A South African studio that builds the website, the tools behind it,
             and the follow-up after launch. Send a brief, email{" "}
             <a
-              href="mailto:meritbrandinglto@gmail.com"
+              href="mailto:lukho@meritbranding.com"
               className="text-ink underline-offset-2 hover:text-merit hover:underline"
             >
-              meritbrandinglto@gmail.com
+              lukho@meritbranding.com
             </a>
             , or WhatsApp{" "}
             <a

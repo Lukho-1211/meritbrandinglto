@@ -28,9 +28,9 @@ export function Contact({ preselected }: ContactProps) {
             <li>
               <a
                 className="hover:text-merit transition-colors"
-                href="mailto:meritbrandinglto@gmail.com"
+                href="mailto:lukho@meritbranding.com"
               >
-                meritbrandinglto@gmail.com
+                lukho@meritbranding.com
               </a>
             </li>
             <li>
