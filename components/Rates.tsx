@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 
 const RATES = [
@@ -15,19 +16,33 @@ export function Rates() {
   return (
     <section id="rates" className="scroll-mt-24 border-t border-line">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <Reveal>
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-merit">
-            Rates
-          </p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            A written quote after the brief, before any work starts.
-          </h2>
-          <span className="mt-5 block h-0.5 w-10 bg-mark" aria-hidden />
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-            You can take one part or several. Website, store, app, and hosting are
-            priced apart, and the quote names the number before you accept.
-          </p>
-        </Reveal>
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12">
+          <Reveal>
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-merit">
+              Rates
+            </p>
+            <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+              A written quote after the brief, before any work starts.
+            </h2>
+            <span className="mt-5 block h-0.5 w-10 bg-mark" aria-hidden />
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+              You can take one part or several. Website, store, app, and hosting are
+              priced apart, and the quote names the number before you accept.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-field">
+              <Image
+                src="/media/rates-quote.jpg"
+                alt="Written quote on a desk, with a numbered total before work starts."
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-center"
+              />
+            </div>
+          </Reveal>
+        </div>
 
         <RevealGroup className="mt-10 divide-y divide-line border-y border-line">
           {RATES.map((rate) => (

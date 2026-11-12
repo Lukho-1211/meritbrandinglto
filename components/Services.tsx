@@ -29,7 +29,7 @@ export function Services() {
               </h3>
               <div className="max-w-2xl">
                 <p className="text-base leading-relaxed text-muted">{service.body}</p>
-                <p className="mt-3 text-sm leading-relaxed text-ink">
+                <p className="mt-3 text-sm font-bold leading-relaxed text-ink">
                   Includes {service.includes}
                 </p>
               </div>
