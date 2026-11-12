@@ -3,7 +3,7 @@ import { Reveal, RuleReveal } from "@/components/motion/Reveal";
 const STEPS = [
   {
     title: "Brief",
-    body: "Tell us what you need — a website, an app, hosting, Customer Relationship Management (CRM), or a mix. We confirm scope, price, and timing before anything is built.",
+    body: "Tell us what you need — a website, a store, an app, hosting, a CRM, or a mix. We confirm scope, price, and timing before anything is built.",
   },
   {
     title: "Build",
@@ -26,6 +26,7 @@ export function Process() {
           <h2 className="mt-3 max-w-xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Brief, build, look after.
           </h2>
+          <span className="mt-5 block h-0.5 w-10 bg-mark" aria-hidden />
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
             Price and timing are set in the brief, before we build.
           </p>

@@ -93,7 +93,7 @@ function LoginForm({
         <button
           type="submit"
           disabled={!configured}
-          className="inline-flex w-full items-center justify-center rounded-full bg-merit px-5 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90 disabled:opacity-60"
+          className="inline-flex w-full items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-medium text-on-action transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           Open desk
         </button>

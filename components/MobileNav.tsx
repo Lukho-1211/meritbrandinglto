@@ -1,17 +1,17 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 const LINKS = [
-  ["#services", "Services"],
-  ["#rates", "Rates"],
-  ["#work", "Work"],
-  ["#questions", "Questions"],
-  ["#contact", "Contact"],
+  ["/#services", "Services"],
+  ["/#rates", "Rates"],
+  ["/#work", "Work"],
+  ["/#questions", "Questions"],
+  ["/#contact", "Contact"],
 ] as const;
 
-export function MobileNav() {
+export function MobileNav({ children }: { children?: ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ export function MobileNav() {
           <motion.nav
             id="mobile-nav"
             aria-label="Primary"
-            className="absolute right-0 z-50 mt-2 w-56 rounded-2xl border border-line bg-paper p-2 shadow-[0_18px_40px_-28px_rgba(21,36,44,0.45)]"
+            className="absolute right-0 z-50 mt-2 w-56 rounded-2xl border border-line bg-paper p-2 shadow-[0_18px_40px_-28px_rgba(0,52,89,0.45)]"
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
@@ -46,6 +46,7 @@ export function MobileNav() {
                 {label}
               </a>
             ))}
+            <div onClick={() => setOpen(false)}>{children}</div>
             <a
               href="tel:+27721172942"
               className="block rounded-lg px-3 py-2.5 text-sm text-ink hover:bg-field"

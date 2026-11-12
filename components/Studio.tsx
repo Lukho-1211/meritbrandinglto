@@ -9,11 +9,13 @@ export function Studio() {
             Studio
           </p>
           <h2 className="mt-3 max-w-xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Merit Branding LTO.
+            You will hear from Lukho.
           </h2>
+          <span className="mt-5 block h-0.5 w-10 bg-mark" aria-hidden />
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-            A South African studio that builds the website, the tools behind it,
-            and the follow-up after launch. Send a brief, email{" "}
+            Merit Branding LTO is an online studio for South African businesses.
+            There is no shopfront. Lukho reads every brief, replies, and stays on
+            the work through launch. Email{" "}
             <a
               href="mailto:lukho@meritbranding.com"
               className="text-ink underline-offset-2 hover:text-merit hover:underline"

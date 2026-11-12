@@ -20,7 +20,7 @@ export function BuildSheet({ onSendBrief }: BuildSheetProps) {
   }
 
   return (
-    <div className="rounded-2xl border border-line bg-paper p-5 shadow-[0_18px_40px_-28px_rgba(21,36,44,0.45)] sm:p-6">
+    <div className="rounded-2xl border border-line bg-paper p-5 shadow-[0_18px_40px_-28px_rgba(0,52,89,0.45)] sm:p-6">
       <div className="mb-4 flex items-baseline justify-between gap-3">
         <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-merit">
           Build sheet
@@ -45,7 +45,7 @@ export function BuildSheet({ onSendBrief }: BuildSheetProps) {
                 <span
                   className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md border text-xs ${
                     active
-                      ? "border-merit bg-merit text-paper"
+                      ? "border-ink bg-ink text-on-action"
                       : "border-line bg-field text-transparent"
                   }`}
                   aria-hidden
@@ -84,7 +84,7 @@ export function BuildSheet({ onSendBrief }: BuildSheetProps) {
       <button
         type="button"
         onClick={() => onSendBrief(selected)}
-        className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-ink px-5 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-medium text-on-action transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
         disabled={selected.length === 0}
       >
         Send this brief

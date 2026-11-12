@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --field: #e3eeea;
-  --ink: #15242c;
-  --merit: #0c6e68;
-  --line: #c3d0cb;
-  --paper: #f4f7f6;
-  --muted: #3a4c4a;
+  --field: #f4f1ea;
+  --ink: #0e2a3d;
+  --merit: #1a5f86;
+  --action: #0e2a3d;
+  --on-action: #f7f4ee;
+  --mark: #a6843d;
+  --line: #ddd6c8;
+  --paper: #faf8f4;
+  --muted: #3e5160;
 }
 
 @theme inline {
   --color-field: var(--field);
   --color-ink: var(--ink);
   --color-merit: var(--merit);
+  --color-action: var(--action);
+  --color-on-action: var(--on-action);
+  --color-mark: var(--mark);
   --color-line: var(--line);
   --color-paper: var(--paper);
   --color-muted: var(--muted);
@@ -68,45 +74,12 @@ body {
   will-change: transform;
 }
 
-@keyframes work-marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
 .work-card {
   transition: border-color 0.25s ease;
 }
 
 .work-card:hover {
   border-color: color-mix(in srgb, var(--merit) 40%, var(--line));
-}
-
-.work-marquee-rail {
-  animation: work-marquee 52s linear infinite;
-  will-change: transform;
-}
-
-.work-marquee:hover .work-marquee-rail,
-.work-marquee.is-paused .work-marquee-rail {
-  animation-play-state: paused;
-}
-
-.work-marquee-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
-}
-
-.work-marquee-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.work-marquee-scroll::-webkit-scrollbar-thumb {
-  background: var(--line);
-  border-radius: 999px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -121,21 +94,5 @@ body {
     animation: none !important;
     transform: none !important;
     will-change: auto;
-  }
-
-  .work-marquee-rail {
-    animation: none !important;
-    transform: none !important;
-    will-change: auto;
-  }
-
-  .work-marquee-viewport {
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) transparent;
-  }
-
-  .work-track-dup {
-    display: none;
   }
 }

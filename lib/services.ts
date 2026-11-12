@@ -18,6 +18,14 @@ export const SERVICES = [
       "the pages, a contact path that works, and a look matched to the business.",
   },
   {
+    id: "online-store",
+    label: "Online store",
+    brief: "an online store",
+    title: "Online stores",
+    body: "A shop where customers browse products, see prices, and place an order from the page.",
+    includes: "product pages, a cart, and a path to pay or place the order.",
+  },
+  {
     id: "web-app",
     label: "Web app",
     brief: "a web app",
@@ -36,8 +44,8 @@ export const SERVICES = [
   },
   {
     id: "crm",
-    label: "Customer Relationship Management (CRM)",
-    brief: "Customer Relationship Management (CRM) for enquiries",
+    label: "CRM",
+    brief: "a CRM for enquiries",
     title: "Customer Relationship Management (CRM)",
     body: "A simple place to keep enquiries, follow-ups, and notes so leads do not get lost in a chat thread.",
     includes: "enquiries, follow-ups, and notes in one place.",

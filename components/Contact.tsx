@@ -2,6 +2,7 @@
 
 import type { ServiceId } from "@/lib/services";
 import { ContactForm } from "@/components/ContactForm";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Reveal } from "@/components/motion/Reveal";
 
 type ContactProps = {
@@ -19,9 +20,10 @@ export function Contact({ preselected }: ContactProps) {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Tell us what to build.
           </h2>
+          <span className="mt-5 block h-0.5 w-10 bg-mark" aria-hidden />
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
             Send a brief and we will get back to you. Prefer a quick chat? Call,
-            email, or WhatsApp.
+            email, or message us on Facebook or Instagram.
           </p>
 
           <ul className="mt-8 space-y-3 text-base text-ink">
@@ -42,14 +44,7 @@ export function Contact({ preselected }: ContactProps) {
               </a>
             </li>
             <li>
-              <a
-                className="inline-flex items-center gap-2 text-merit hover:opacity-80"
-                href="https://wa.me/27721172942"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
-              </a>
+              <SocialLinks variant="contact" className="-ml-2.5" />
             </li>
           </ul>
         </Reveal>

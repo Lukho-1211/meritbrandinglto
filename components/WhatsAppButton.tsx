@@ -28,7 +28,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
-      className="fixed bottom-4 right-4 z-40 inline-flex size-12 items-center justify-center rounded-full bg-merit text-paper shadow-[0_18px_40px_-28px_rgba(21,36,44,0.45)] transition-opacity hover:opacity-90"
+      className="fixed bottom-4 right-4 z-40 inline-flex size-12 items-center justify-center rounded-full bg-ink text-paper shadow-[0_18px_40px_-28px_rgba(0,52,89,0.45)] transition-opacity hover:opacity-90"
     >
       <svg
         viewBox="0 0 24 24"

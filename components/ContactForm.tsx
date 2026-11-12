@@ -20,6 +20,7 @@ export function ContactForm({ preselected }: ContactFormProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [submittedEmail, setSubmittedEmail] = useState("");
 
   useEffect(() => {
     setServices(preselected);
@@ -81,6 +82,7 @@ export function ContactForm({ preselected }: ContactFormProps) {
         return;
       }
 
+      setSubmittedEmail(email.trim());
       setStatus("success");
       setName("");
       setBusiness("");
@@ -107,7 +109,7 @@ export function ContactForm({ preselected }: ContactFormProps) {
           Enquiry received
         </h3>
         <p className="mt-3 text-base leading-relaxed text-muted">
-          Thanks — your brief is with us. We will reply by email. For something
+          Thanks. Your brief is with us. We will reply by email. For something
           urgent, WhatsApp{" "}
           <a
             className="text-merit underline-offset-2 hover:underline"
@@ -117,13 +119,21 @@ export function ContactForm({ preselected }: ContactFormProps) {
           </a>
           .
         </p>
-        <button
-          type="button"
-          className="mt-6 inline-flex rounded-full border border-line px-4 py-2 text-sm font-medium text-ink hover:bg-field"
-          onClick={() => setStatus("idle")}
-        >
-          Send another enquiry
-        </button>
+        <div className="mt-6 flex flex-col items-start gap-4">
+          <a
+            href={`/login?email=${encodeURIComponent(submittedEmail)}`}
+            className="text-sm font-medium text-merit hover:opacity-80"
+          >
+            Track this brief in your portal
+          </a>
+          <button
+            type="button"
+            className="inline-flex rounded-full border border-line px-4 py-2 text-sm font-medium text-ink hover:bg-field"
+            onClick={() => setStatus("idle")}
+          >
+            Send another enquiry
+          </button>
+        </div>
       </div>
     );
   }
@@ -189,7 +199,7 @@ export function ContactForm({ preselected }: ContactFormProps) {
                 key={service.id}
                 className={`cursor-pointer rounded-full border px-3 py-1.5 text-sm transition-colors ${
                   active
-                    ? "border-merit bg-merit text-paper"
+                    ? "border-merit bg-merit text-ink"
                     : "border-line bg-paper text-muted hover:border-merit/40"
                 }`}
               >
@@ -236,12 +246,19 @@ export function ContactForm({ preselected }: ContactFormProps) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex w-full items-center justify-center rounded-full bg-merit px-5 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90 disabled:opacity-60 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-full bg-action px-5 py-3 text-sm font-medium text-on-action transition-opacity hover:opacity-90 disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Sending…" : "Send enquiry"}
       </button>
       <p className="text-sm leading-relaxed text-muted">
-        We use your name, business, email, and phone only to reply to this brief.
+        We use your name, business, email, and phone only to reply to this brief.{" "}
+        <a href="/privacy" className="text-ink underline-offset-2 hover:text-merit hover:underline">
+          Privacy
+        </a>
+        {" · "}
+        <a href="/terms" className="text-ink underline-offset-2 hover:text-merit hover:underline">
+          Terms
+        </a>
       </p>
     </form>
   );

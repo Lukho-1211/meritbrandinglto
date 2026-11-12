@@ -2,8 +2,8 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 
 const RATES = [
   {
-    title: "Website or app",
-    body: "Quoted once we know the pages or the tool. The number comes back with the reply to your brief.",
+    title: "Website, store, or app",
+    body: "The quote names one number for the pages, the shop, or the tool. You see it in the reply to your brief, before anything is built.",
   },
   {
     title: "Hosting",
@@ -20,11 +20,12 @@ export function Rates() {
             Rates
           </p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            A written quote after the brief. No public price list.
+            A written quote after the brief, before any work starts.
           </h2>
+          <span className="mt-5 block h-0.5 w-10 bg-mark" aria-hidden />
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-            You can take one part or several. Website, app, and hosting are priced
-            apart so the quote matches what you actually need.
+            You can take one part or several. Website, store, app, and hosting are
+            priced apart, and the quote names the number before you accept.
           </p>
         </Reveal>
 

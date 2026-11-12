@@ -5,8 +5,6 @@ import { MotionConfig, motion } from "motion/react";
 import { useCallback, useState } from "react";
 import { BuildSheet } from "@/components/BuildSheet";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { Process } from "@/components/Process";
 import { Questions } from "@/components/Questions";
 import { Rates } from "@/components/Rates";
@@ -29,7 +27,6 @@ export function HomePage() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <Header />
       <main id="top" className="flex-1">
         <section className="relative overflow-hidden border-b border-line">
           <div className="absolute inset-0" aria-hidden>
@@ -39,39 +36,26 @@ export function HomePage() {
               fill
               priority
               sizes="100vw"
-              className="hero-drift object-cover object-center opacity-[0.28]"
+              className="hero-drift object-cover object-center opacity-50"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-field/85 via-field/78 to-field" />
+            <div className="absolute inset-0 bg-gradient-to-r from-field via-field/88 to-field/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-field" />
           </div>
 
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
             <div>
-              <motion.h1
-                className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: EASE, delay: 0.05 }}
-              >
-                The website, app, hosting, and Customer Relationship Management (CRM) your business runs on.
-              </motion.h1>
-              <motion.p
-                className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: EASE, delay: 0.14 }}
-              >
+              <h1 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]">
+                Build Fast. Pay Less. Grow Sooner.
+              </h1>
+              <span className="mt-6 block h-0.5 w-10 bg-mark" aria-hidden />
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                 We build digital tools for South African businesses that need to
                 look professional online and keep enquiries in one place.
-              </motion.p>
-              <motion.div
-                className="mt-8 flex flex-wrap gap-3"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: EASE, delay: 0.24 }}
-              >
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#contact"
-                  className="inline-flex items-center rounded-full bg-merit px-5 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90"
+                  className="inline-flex items-center rounded-full bg-action px-5 py-3 text-sm font-medium text-on-action transition-opacity hover:opacity-90"
                 >
                   Start a brief
                 </a>
@@ -81,16 +65,12 @@ export function HomePage() {
                 >
                   See services
                 </a>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: EASE, delay: 0.32 }}
-            >
+            <div>
               <BuildSheet onSendBrief={onSendBrief} />
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -131,7 +111,6 @@ export function HomePage() {
         <Questions />
         <Contact preselected={preselected} />
       </main>
-      <Footer />
       <WhatsAppButton />
     </MotionConfig>
   );

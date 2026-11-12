@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { SERVICES, type ServiceId } from "@/lib/services";
 import { getAdminSupabase } from "@/lib/supabase/admin";
+import { supabaseBrowserConfigured } from "@/lib/supabase/env";
+import { createServerSupabase } from "@/lib/supabase/server";
 
 const SERVICE_IDS = new Set(SERVICES.map((s) => s.id));
 
@@ -60,6 +62,19 @@ export async function POST(request: Request) {
     );
   }
 
+  let userId: string | null = null;
+  if (supabaseBrowserConfigured()) {
+    try {
+      const sessionClient = await createServerSupabase();
+      const { data } = await sessionClient.auth.getUser();
+      if (data.user?.email && data.user.email.toLowerCase() === email.toLowerCase()) {
+        userId = data.user.id;
+      }
+    } catch (err) {
+      console.error("leads session read failed", err);
+    }
+  }
+
   try {
     const supabase = getAdminSupabase();
     const { error } = await supabase.from("leads").insert({
@@ -70,6 +85,7 @@ export async function POST(request: Request) {
       services,
       message,
       source: "meritbranding-site",
+      user_id: userId,
     });
 
     if (error) {

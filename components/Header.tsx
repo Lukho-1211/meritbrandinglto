@@ -1,12 +1,19 @@
 import Image from "next/image";
+import { AuthNav } from "@/components/AuthNav";
 import { MobileNav } from "@/components/MobileNav";
+
+const AUTH_DESKTOP_CLASS =
+  "hover:text-ink transition-colors";
+
+const AUTH_MOBILE_CLASS =
+  "block rounded-lg px-3 py-2.5 text-sm text-ink hover:bg-field";
 
 export function Header() {
   return (
     <header className="border-b border-line bg-field/90 backdrop-blur-sm sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
         <a
-          href="#top"
+          href="/"
           className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-ink"
         >
           <Image
@@ -20,22 +27,26 @@ export function Header() {
           <span className="hidden sm:inline">Merit Branding</span>
         </a>
         <div className="flex items-center gap-3 sm:gap-4">
-          <nav className="hidden items-center gap-5 text-sm text-muted xl:flex" aria-label="Primary">
-            <a href="#services" className="hover:text-ink transition-colors">
+          <nav
+            className="hidden items-center gap-5 text-sm text-muted xl:flex"
+            aria-label="Primary"
+          >
+            <a href="/#services" className="hover:text-ink transition-colors">
               Services
             </a>
-            <a href="#rates" className="hover:text-ink transition-colors">
+            <a href="/#rates" className="hover:text-ink transition-colors">
               Rates
             </a>
-            <a href="#work" className="hover:text-ink transition-colors">
+            <a href="/#work" className="hover:text-ink transition-colors">
               Work
             </a>
-            <a href="#questions" className="hover:text-ink transition-colors">
+            <a href="/#questions" className="hover:text-ink transition-colors">
               Questions
             </a>
-            <a href="#contact" className="hover:text-ink transition-colors">
+            <a href="/#contact" className="hover:text-ink transition-colors">
               Contact
             </a>
+            <AuthNav className={AUTH_DESKTOP_CLASS} />
             <a
               href="tel:+27721172942"
               className="text-ink hover:text-merit transition-colors"
@@ -43,10 +54,12 @@ export function Header() {
               +27 721 172 942
             </a>
           </nav>
-          <MobileNav />
+          <MobileNav>
+            <AuthNav className={AUTH_MOBILE_CLASS} />
+          </MobileNav>
           <a
-            href="#contact"
-            className="inline-flex shrink-0 items-center rounded-full bg-merit px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-90"
+            href="/#contact"
+            className="inline-flex shrink-0 items-center rounded-full bg-action px-4 py-2 text-sm font-medium text-on-action transition-opacity hover:opacity-90"
           >
             Start a brief
           </a>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export function Footer() {
   return (
@@ -12,9 +13,12 @@ export function Footer() {
             height={28}
             className="rounded-md"
           />
-          <p className="font-display font-medium text-ink">Merit Branding LTO</p>
+          <div>
+            <p className="font-display font-medium text-ink">Merit Branding LTO</p>
+            <p className="text-xs">Lukho replies to every brief.</p>
+          </div>
         </div>
-        <p>Websites, apps, hosting, and Customer Relationship Management (CRM).</p>
+        <p>Websites, stores, apps, hosting, and CRM.</p>
         <div className="flex flex-col gap-2 sm:items-end">
           <a href="tel:+27721172942" className="hover:text-ink transition-colors">
             +27 721 172 942
@@ -25,14 +29,15 @@ export function Footer() {
           >
             lukho@meritbranding.com
           </a>
-          <a
-            href="https://wa.me/27721172942"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-ink transition-colors"
-          >
-            WhatsApp
-          </a>
+          <SocialLinks variant="footer" className="sm:justify-end" />
+          <nav aria-label="Legal" className="flex gap-4">
+            <a href="/privacy" className="hover:text-ink transition-colors">
+              Privacy
+            </a>
+            <a href="/terms" className="hover:text-ink transition-colors">
+              Terms
+            </a>
+          </nav>
         </div>
       </div>
     </footer>
